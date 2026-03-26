@@ -20,5 +20,14 @@ public class bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+            if (collision.gameObject.CompareTag("enemy"))
+        {
+        Enemyscript enemy = collision.gameObject.GetComponent<Enemyscript>();
+        if (enemy != null)
+        {
+            enemy.setHealth(1.3f);
+        }
+        Destroy(this.gameObject);
+        }
     }
 }
